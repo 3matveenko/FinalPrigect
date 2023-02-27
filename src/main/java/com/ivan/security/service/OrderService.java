@@ -47,14 +47,14 @@ public class OrderService {
                 order.setUsername(ords1.getUsername().getUsername());
                 order.setDate(ords1.getDate());
                 order.setSum(ords1.getSum());
+                order.setItemsMenu(ords1.getItemsMenu());
                 orders.add(order);
             }
             return orders;
         }
 
     public OrderAddRequest orderById(OrderAddRequest request){
-        Long ID = request.getId();
-        Order neworder = orderRepositiry.findById(ID).orElseThrow();
+        Order neworder = orderRepositiry.findById(request.getId()).orElseThrow();
         return OrderAddRequest.builder()
                 .id(neworder.getId())
                 .sum(neworder.getSum())

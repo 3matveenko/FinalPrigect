@@ -1,7 +1,8 @@
 package com.ivan.security.model;
 import jakarta.persistence.*;
 import lombok.*;
-import java.util.Date;
+
+import java.sql.Date;
 import java.util.List;
 
 @Data

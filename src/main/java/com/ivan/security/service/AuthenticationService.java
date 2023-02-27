@@ -8,6 +8,7 @@ import com.ivan.security.model.User;
 import com.ivan.security.repository.PermissionRepository;
 import com.ivan.security.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -23,6 +24,8 @@ public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final PermissionRepository permissionRepository;
     private final JwtService jwtService;
+
+
     private final UserService userService;
     private final AuthenticationManager authenticationManager;
     public AuthenticationResponse register(RegisterRequest request) {
